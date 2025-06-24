@@ -1,13 +1,10 @@
 /* General Styling */
-/* General Styling */
 :root {
     --primary-color: #C0392B;
-    --secondary-color: #E74C3C;
     --text-dark: #333333;
-    --text-light: #777777;
-    --bg-light: #FEFBFB;
     --bg-white: #FFFFFF;
     --border-color: #EAEAEA;
+    --bg-light: #FEFBFB;
 }
 
 * {
@@ -16,69 +13,66 @@
     box-sizing: border-box;
 }
 
-/* Menggunakan Font Poppins */
 body {
-    font-family: 'Poppins', sans-serif; /* INI YANG PENTING */
+    font-family: 'Poppins', sans-serif;
     background-color: var(--bg-light);
     color: var(--text-dark);
-}
-
-/* Sisa kode CSS lainnya tetap sama seperti sebelumnya... */
-/* ... (salin semua kode CSS dari jawaban pertama) ... */
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* Header and Navigation */
 .main-header {
     background-color: var(--bg-white);
     padding: 15px 7%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--primary-color);
-    text-decoration: none;
-    /* Tambahkan ini untuk menyejajarkan logo */
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
 }
+
+.logo img {
+    height: 40px; 
+    width: auto;
+}
+
+.logo span {
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
 
 .nav-menu {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 40px;
+    margin-left: auto; 
 }
 
-.nav-menu a {
+.nav-menu a:not(.btn) {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
     transition: color 0.3s;
-}
-.logo img {
-    height: 40px; /* Atur tinggi logo sesuai kebutuhan */
-    width: auto; /* Biarkan lebar menyesuaikan agar proporsional */
+    font-size: 16px;
 }
 
-.nav-menu a:hover {
+.nav-menu a:not(.btn):hover {
     color: var(--primary-color);
 }
 
 .btn {
-    padding: 10px 25px;
-    border-radius: 20px;
+    padding: 10px 28px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     color: var(--bg-white);
@@ -96,7 +90,16 @@ body {
 }
 
 
-/* Hero Section */
+.desktop-login {
+    margin-left: 40px; 
+}
+
+.hamburger,
+.mobile-login {
+    display: none;
+}
+
+
 .hero-section {
     display: flex;
     align-items: center;
@@ -111,7 +114,7 @@ body {
 
 .hero-content h1 {
     font-size: 48px;
-    color: #000000; /* Green from the image */
+    color: #000000;
     font-weight: 700;
 }
 
@@ -125,7 +128,9 @@ body {
     background-color: var(--primary-color);
     font-size: 16px;
     padding: 12px 30px;
+    border-radius: 25px;
 }
+
 .btn-order:hover {
     background-color: #a53125;
 }
@@ -134,7 +139,6 @@ body {
     max-width: 450px;
     border-radius: 10px;
 }
-
 
 /* Menu Section */
 .menu-section {
@@ -160,7 +164,7 @@ body {
     border-radius: 30px;
     border: 1px solid var(--border-color);
     font-size: 16px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .filter-tabs {
@@ -178,9 +182,11 @@ body {
     background-color: #FCE8E6;
     color: var(--primary-color);
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.tab-link.active, .tab-link:hover {
+.tab-link.active,
+.tab-link:hover {
     background-color: var(--primary-color);
     color: var(--bg-white);
 }
@@ -201,7 +207,7 @@ body {
 .menu-card {
     background-color: var(--bg-white);
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     overflow: hidden;
 }
 
@@ -233,7 +239,7 @@ body {
 }
 
 .status {
-    color: #2E7D32; /* Green */
+    color: #2E7D32;
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 10px;
@@ -241,7 +247,7 @@ body {
 
 .description {
     font-size: 14px;
-    color: var(--text-light);
+    color: #777777;
     margin-bottom: 20px;
     min-height: 60px;
 }
@@ -252,33 +258,26 @@ body {
     width: 100%;
     text-align: center;
 }
+
 .btn-add-item:hover {
     background-color: #a53125;
 }
-
 
 /* Floating Action Button (Cart) */
 .cart-fab {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    z-index: 100;
 }
 
 .cart-fab img {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s;
 }
 
-.cart-fab:hover {
+.cart-fab:hover img {
     transform: scale(1.1);
 }
 
@@ -295,7 +294,8 @@ body {
     gap: 40px;
 }
 
-.footer-about, .footer-info {
+.footer-about,
+.footer-info {
     flex-basis: 48%;
 }
 
@@ -312,4 +312,84 @@ body {
 
 .footer-info p {
     margin-bottom: 10px;
+}
+
+/* Responsive CSS untuk Mobile */
+@media (max-width: 920px) {
+    .navbar {
+        justify-content: space-between;
+    }
+    
+    .logo {
+        margin-right: 0;
+    }
+    .logo span {
+        font-size: 24px;
+    }
+    .logo img {
+        height: 35px;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding-bottom: 20px;
+        z-index: 100;
+        margin-left: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        padding: 10px 0;
+    }
+
+    .desktop-login {
+        display: none;
+    }
+
+    .mobile-login {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        height: 3px;
+        width: 100%;
+        background-color: var(--text-dark);
+        border-radius: 10px;
+    }
+
+    .hero-section,
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .search-bar {
+        width: 90%;
+    }
 }
